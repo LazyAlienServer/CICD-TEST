@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+    gateway:
+      routes:
+        - id: cicd-route
+          uri: lb://cicd
+          predicates:
+            - Path=/api/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+server:
+  port: 9090

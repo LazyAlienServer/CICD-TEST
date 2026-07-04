@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cicd
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+
+server:
+  port: 8082
